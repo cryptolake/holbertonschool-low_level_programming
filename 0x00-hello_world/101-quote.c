@@ -11,7 +11,7 @@ int main(void)
 {
 	char q[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 
-	write(2, q, 58);
-	/* write(2, "FAILURE\n", 7); */
+	write(1, q, 58);
+	write(2, "FAILURE\n", 7);
 	return (1);
 }
