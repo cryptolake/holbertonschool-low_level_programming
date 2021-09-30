@@ -9,9 +9,9 @@
 */
 int main(void)
 {
-	char q[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
+	char q[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 
+	write(2, "", 0);
 	write(STDOUT_FILENO, q, 58);
-	write(STDERR_FILENO, "FAILURE", 7);
-	return (0);
+	return (1);
 }
