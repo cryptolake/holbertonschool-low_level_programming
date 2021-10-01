@@ -1,18 +1,25 @@
 #include <stdio.h>
 
+/**
+ * main - print the combination of two digits
+ * without repeating the same digit
+ *
+ *
+ * Return: 0 (success)
+ **/
 int main(void)
 {
-    int i,j;
+	int i, j;
 
 	for (i = 48; i <= 57; i++)
 	{
-		for (j = i+1; j <= 57; j++)
+		for (j = i + 1; j <= 57; j++)
 		{
 			if (j != i)
 			{
 				putchar(i);
 				putchar(j);
-				if (!( i == 56 && j == 57 ))
+				if (!(i == 56 && j == 57))
 				{
 					putchar(',');
 					putchar(' ');
