@@ -8,10 +8,18 @@ void fib(int l)
 	f[0] = 0;
 	f[1] = 1;
 
-	for (x = 2; x <= l; x++)
+	for (x = 2; x <= l+1; x++)
 	{
 		f[x] = f[x - 1] + f[x - 2];
-		printf("%ld, ",f[x]);
+
+		if (x == l+1)
+		{
+			printf("%ld",f[x]);
+		}
+		else
+		{
+			printf("%ld, ",f[x]);
+		}
 	}
 }
 
