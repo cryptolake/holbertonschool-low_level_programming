@@ -1,12 +1,12 @@
 #include <stdio.h>
 
- /**
- * fib - calculate the sum of the even valued fabonacci
- * under k
- * @k: value of the limit not to exceed
- *
- * Return: The sum
- **/
+/**
+* fib - calculate the sum of the even valued fabonacci
+* under k
+* @k: value of the limit not to exceed
+*
+* Return: The sum
+**/
 long int fib(long int k)
 {
 	long int y;
@@ -41,6 +41,6 @@ long int fib(long int k)
 int main(void)
 {
 
-	printf("%ld\n",fib(4000000));
+	printf("%ld\n", fib(4000000));
 	return (0);
 }
