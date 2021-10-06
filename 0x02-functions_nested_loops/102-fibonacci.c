@@ -3,7 +3,7 @@
 void fib(int l)
 {
 	int x;
-	long long int f[100];
+	long int f[100];
 
 	f[0] = 0;
 	f[1] = 1;
@@ -11,7 +11,7 @@ void fib(int l)
 	for (x = 2; x <= l; x++)
 	{
 		f[x] = f[x - 1] + f[x - 2];
-		printf("%lld, ",f[x]);
+		printf("%ld, ",f[x]);
 	}
 }
 
