@@ -19,4 +19,5 @@ int main(void)
 {
 	fib(50);
 	printf("\n");
+	return (0);
 }
