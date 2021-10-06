@@ -29,7 +29,7 @@ int sum_three_five(int k, int l)
  **/
 int main(void)
 {
-	printf("%d\n",sum_three_five(3,1024));
+	printf("%d\n", sum_three_five(3, 1024));
 
 	return (0);
 
