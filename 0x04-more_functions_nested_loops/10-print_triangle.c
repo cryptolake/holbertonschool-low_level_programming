@@ -1,5 +1,10 @@
 #include "main.h"
 
+/**
+ * print_triangle - print trianble
+ * @size: base
+ *
+ **/
 void print_triangle(int size)
 {
 	int i, j, l;
