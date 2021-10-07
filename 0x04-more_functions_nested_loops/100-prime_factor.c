@@ -41,7 +41,7 @@ int main(void)
 	x = 0;
 	for (i = 2; i < sqrt(612852475143); i++)
 	{
-		if ((isprime(i) == 1) && i > x)
+		if (isprime(i) == 1 && 612852475143 % i == 0 && i > x)
 			x = i;
 	}
 	printf("%d\n", x);
