@@ -21,6 +21,7 @@ int isprime(int x)
 	{
 		if (x % i == 0)
 		{
+			break;
 			return (0);
 		}
 	}
@@ -40,7 +41,7 @@ int main(void)
 
 	for (i = 2; i <= sqrt(612852475143); i++)
 	{
-		if (isprime(i) && i >= x)
+		if (isprime(i) == 1 && i > x)
 			x = i;
 	}
 	printf("%d\n", x);
