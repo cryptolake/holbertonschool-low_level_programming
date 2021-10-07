@@ -15,13 +15,13 @@ void fizzbuzz(int i)
 	else if (i % 5 == 0)
 		printf("Buzz ");
 	else
-		printf("%d ",i);
+		printf("%d ", i);
 }
 
 /**
  * main - fizz buzz first 100
  *
- * Return (0) success
+ * Return: 0 success
  **/
 int main(void)
 {
@@ -31,5 +31,6 @@ int main(void)
 	{
 		fizzbuzz(i);
 	}
+	printf("\n");
 	return (0);
 }
