@@ -10,10 +10,13 @@
 int main(void)
 {
 	long int i, x, n;
+
 	n = 612852475143;
 
-	for (i = 2; i <= sqrt(n); i++) {
-		while (n % i == 0) {
+	for (i = 2; i <= sqrt(n); i++)
+	{
+		while (n % i == 0)
+		{
 			x = i;
 			n = n / i;
 		}
@@ -21,6 +24,6 @@ int main(void)
 
 
 	x = n;
-	printf("%ld \n",x);
+	printf("%ld\n", x);
 	return (0);
 }
