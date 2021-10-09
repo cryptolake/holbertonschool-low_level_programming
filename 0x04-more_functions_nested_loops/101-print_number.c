@@ -1,6 +1,11 @@
 #include "main.h"
 #include <stdio.h>
 
+/**
+ * print_number - print number with putchar
+ * @n: number
+ *
+ **/
 void print_number(int n)
 {
 	int x, y, r;
