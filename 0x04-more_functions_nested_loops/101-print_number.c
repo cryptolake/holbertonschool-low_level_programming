@@ -2,16 +2,18 @@
 
 void print_number(int n)
 {
-	int x, r;
+	int x, y, r;
+
 	x = 0;
+	y = n;
 
 	if (n > 0)
 	{
-		while (n != 0)
+		while (y != 0)
 		{
-			r = n % 10;
+			r = y % 10;
 			x = x * 10 + r;
-			n = n / 10;
+			y = y / 10;
 		}
 
 		while (x > 0)
@@ -19,23 +21,31 @@ void print_number(int n)
 			_putchar((x % 10) + '0');
 			x = x / 10;
 		}
+		if (n % 10 == 0)
+		{
+			_putchar('0');
+		}
 	}
-	else if (n < 0)
+	else if (y < 0)
 	{
-		n = -n;
+		y = -y;
 
 		_putchar('-');
 
-		while (n != 0)
+		while (y != 0)
 		{
-			r = n % 10;
+			r = y % 10;
 			x = x * 10 + r;
-			n = n / 10;
+			y = y / 10;
 		}
 		while (x > 0)
 		{
 			_putchar((x % 10) + '0');
 			x = x / 10;
+		}
+		if (n % 10 == 0)
+		{
+			_putchar('0');
 		}
 	}
 	else
