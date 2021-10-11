@@ -1,9 +1,14 @@
 #include "main.h"
 #include <string.h>
 
+/**
+ * puts2 - print every other character of string
+ * @str: string
+ *
+ **/
 void puts2(char *str)
 {
-	int i,j;
+	int i, j;
 
 	i = strlen(str);
 
