@@ -20,9 +20,12 @@ int _strlen(char *s)
 }
 
 /**
+ * _strcpy - copy a string to another string
  *
+ * @dest: destination
+ * @src: source
  *
- *
+ * Return: pointer string
  **/
 char *_strcpy(char *dest, char *src)
 {
@@ -36,5 +39,5 @@ char *_strcpy(char *dest, char *src)
 	}
 
 
-	return src;
+	return (src);
 }
