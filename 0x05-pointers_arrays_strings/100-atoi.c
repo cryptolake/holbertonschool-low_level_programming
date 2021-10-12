@@ -87,11 +87,11 @@ int _atoi(char *s)
 		k = sign(s,l);
 		for (j = i; j <= numl(s,i)-1; j++)
 		{
-			n = n + (s[j] - '0');
+			n = n + k * (s[j] - '0');
 			if (j < numl(s,i)-1)
 				n *= 10;
 		}
-		return (k * n);
+		return n;
 	}
 	else
 	{
