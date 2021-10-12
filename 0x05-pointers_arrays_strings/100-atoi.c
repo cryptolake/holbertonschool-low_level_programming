@@ -63,7 +63,7 @@ int numl(char*s, int i)
 
 int _atoi(char *s)
 {
-	long int n;
+	int n;
 	int l, i, j;
 	int k;
 	int f;
