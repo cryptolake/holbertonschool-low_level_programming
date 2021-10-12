@@ -20,6 +20,13 @@ int _strlen(char *s)
 	return (i);
 }
 
+/**
+ * isn - check if character a number or not
+ *
+ * @c: character
+ *
+ * Return: 1 number, 0 not a number
+ **/
 int isn(char c)
 {
 	if (c >= '0' && c <= '9')
@@ -32,9 +39,17 @@ int isn(char c)
 	}
 }
 
-int sign(char *s,int l)
+/**
+ * sign - return the sign of string before a number
+ *
+ * @s: string
+ * @l: length of string
+ *
+ * Return: 1 positive, -1 negative
+ **/
+int sign(char *s, int l)
 {
-	int i,n;
+	int i, n;
 
 	n = 1;
 
@@ -47,20 +62,33 @@ int sign(char *s,int l)
 		}
 		i++;
 	}
-	return n;
+	return (n);
 }
 
 
-int numl(char*s, int i)
+/**
+ * numl - get the length of the number inside a string
+ * @s: string
+ * @i: first index of the number
+ *
+ * Return: index of the last digit of number
+ **/
+int numl(char *s, int i)
 {
 	while (isn(s[i]))
 	{
 		i++;
 	}
-	return i;
+	return (i);
 }
 
-
+/**
+* _atoi - convert number in string to int
+*
+* @s: string
+*
+* Return: number
+**/
 int _atoi(char *s)
 {
 	int n;
@@ -84,14 +112,14 @@ int _atoi(char *s)
 	if (f)
 	{
 		i--;
-		k = sign(s,l);
-		for (j = i; j <= numl(s,i)-1; j++)
+		k = sign(s, l);
+		for (j = i; j <= numl(s, i) - 1; j++)
 		{
 			n = n + k * (s[j] - '0');
-			if (j < numl(s,i)-1)
+			if (j < numl(s, i) - 1)
 				n *= 10;
 		}
-		return n;
+		return (n);
 	}
 	else
 	{
