@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * rot13 - encodes string in rot13 cipher
+ * @s: string
+ *
+ * Return: pointer to string
+ **/
 char *rot13(char *s)
 {
 
