@@ -6,6 +6,7 @@
  *
  * @dest: string
  * @src: string
+ * @n: number of bytes
  *
  * Return: pointer to dest
  **/
@@ -21,10 +22,12 @@ char *_strncat(char *dest, char *src, int n)
 
 	j = 0;
 
-	if (n > ls) {
+	if (n > ls)
+	{
 		l = ld + ls;
 	}
-	for (i = ld; i < l; i++) {
+	for (i = ld; i < l; i++)
+	{
 		dest[i] = src[j];
 		j++;
 	}
