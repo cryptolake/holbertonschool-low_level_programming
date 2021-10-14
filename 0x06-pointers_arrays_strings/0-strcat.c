@@ -1,10 +1,17 @@
 #include "main.h"
 #include <string.h>
 
+/**
+* _strcat - concatonate two strings
+* @dest: string to contonate into
+* @src: string to add
+*
+* Return: pointer of dest
+**/
 char *_strcat(char *dest, char *src)
 {
 	int ls, ld , i, j, l;
-	ls = strlen(src); 
+	ls = strlen(src);
 	ld = strlen(dest);
 	l = ls + ld;
 	j = 0;
@@ -17,5 +24,5 @@ char *_strcat(char *dest, char *src)
 	dest[l] = '\0';
 
 
-	return dest;
+	return (dest);
 }
