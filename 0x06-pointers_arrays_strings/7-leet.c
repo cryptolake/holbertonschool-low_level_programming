@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * leet - L33T H4X0R MODE ACTIVATED
+ *
+ * @s: string
+ *
+ * Return: L33T
+ **/
 char *leet(char *s)
 {
 	int i, j;
@@ -29,5 +36,5 @@ char *leet(char *s)
 		}
 
 	}
-	return s;
+	return (s);
 }
