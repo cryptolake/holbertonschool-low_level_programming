@@ -1,5 +1,13 @@
 #include "main.h"
 
+/**
+ * isalpha2 - check if character is alphabetical
+ * @c: character
+ *
+ * Return: 2 alphabetical highcase
+ * 1 alaphabetical lowercase
+ * 0 non alphabetical
+ **/
 int isalpha2(int c)
 {
 	if (c >= 'a' && c <= 'z')
@@ -17,6 +25,12 @@ int isalpha2(int c)
 
 }
 
+/**
+ * cap_string - capitulize each word of string
+ * @s: string
+ *
+ * Return: pointer to s
+ **/
 char *cap_string(char *s)
 {
 	int i, w;
