@@ -1,11 +1,17 @@
 #include "main.h"
 #include <string.h>
 
+/**
+ * _strcmp - compare two strings and return their difference
+ * @s1: string
+ * @s2: string
+ *
+ *
+ * Return: difference
+ **/
 int _strcmp(char *s1, char *s2)
 {
-	int i;
-	int b;
-	int d;
+	int i, b, d;
 
 	b = 1;
 	d = 0;
