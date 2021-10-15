@@ -1,34 +1,48 @@
 #include "main.h"
-#include <stdio.h>
 
-void print_number(int n)
+int reverse_int(int n)
 {
-  int x, i, y;
-  char s[50];
-
-  y = 1;
-  x = 0;
-  if (n != 0)
-  {
-	if (n < 0)
-	{
-	  _putchar('-');
-	  y = -1;
-	}
+	int rev;
+	rev = 0;
 
 	while (n != 0)
 	{
-	  s[x] = ((y * n) % 10) + '0';
-	  n /= 10;
-	  x++;
+		rev = (rev * 10) + n % 10;
+		n /= 10;
 	}
-	for (i = x - 1; i >= 0; i--)
+	return rev;
+}
+
+void print_number(int n)
+{
+	int y;
+	int m;
+
+	y = 1;
+
+	n = reverse_int(n);
+	/* printf("m = %d\n",m); */
+
+	if (n != 0)
 	{
-	  _putchar(s[i]);
+		if (n < 0)
+		{
+			_putchar('-');
+			y = -1;
+		}
+
+		while (n != 0)
+		{
+			m = y * (n % 10);
+			/* printf("m = %d \n",m); */
+
+			_putchar(m + '0');
+			n /= 10;
+		}
 	}
-  }
-  else
-  {
-	  _putchar('0');
-  }
+
+	else
+	{
+		_putchar('0');
+	}
 }
