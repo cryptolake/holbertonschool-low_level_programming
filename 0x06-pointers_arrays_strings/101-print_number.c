@@ -1,7 +1,8 @@
 #include "main.h"
 #include <stdio.h>
 
-void print_number(int n) {
+void print_number(int n)
+{
   int x, i, y;
   char s[50];
 
