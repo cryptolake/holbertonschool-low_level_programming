@@ -1,48 +1,36 @@
 #include "main.h"
 
-int reverse_int(int n)
+int count_d10(int n)
 {
-	int rev;
-	rev = 0;
-
+	int x;
+	x = 1;
+	n /= 10;
 	while (n != 0)
 	{
-		rev = (rev * 10) + n % 10;
 		n /= 10;
+		x *= 10;
 	}
-	return rev;
+	return x;
 }
 
 void print_number(int n)
 {
-	int y;
-	int m;
+	int x, y, c;
 
+	x = count_d10(n);
 	y = 1;
-
-	n = reverse_int(n);
-	/* printf("m = %d\n",m); */
-
-	if (n != 0)
+	if (n < 0)
 	{
-		if (n < 0)
-		{
-			_putchar('-');
-			y = -1;
-		}
-
-		while (n != 0)
-		{
-			m = y * (n % 10);
-			/* printf("m = %d \n",m); */
-
-			_putchar(m + '0');
-			n /= 10;
-		}
+		y = -1;
+		_putchar('-');
 	}
 
-	else
+	while (x != 0)
 	{
-		_putchar('0');
+		c = y * ((n / x) % 10) + '0' ;
+		x /= 10;
+		_putchar(c);
 	}
+
+
 }
