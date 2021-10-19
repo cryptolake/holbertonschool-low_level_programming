@@ -5,7 +5,7 @@
  * of the bytes in the string accept
  *
  * @s: string
- * @accept: bytes to search for
+ * @accepted: bytes to search for
  *
  * Return: pointer to first occurance
  **/
