@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "main.h"
 /**
  * calc_coin - calculate the minimum coin
  * number of m amount.
