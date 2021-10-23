@@ -1,6 +1,5 @@
-#include "main.h"
 #include <stdio.h>
-
+#include <stdlib.h>
 /**
  * calc_coin - calculate the minimum coin
  * number of m amount.
@@ -17,29 +16,34 @@ int calc_coin(int m)
 	i = 0;
 	while (m > 0)
 	{
-		if (m % 25 == 0)
+		if (m - 25 >= 0)
 		{
 			i++;
+			/* printf("m = %d - 25, i = %d\n",m,i); */
 			m -= 25;
 		}
-		else if (m % 10 == 0)
+		else if (m - 10 >= 0)
 		{
 			i++;
+			/* printf("m = %d - 10, i = %d\n",m,i); */
 			m -= 10;
 		}
-		else if (m % 5 == 0)
+		else if (m - 5 >= 0)
 		{
 			i++;
+			/* printf("m = %d - 5, i = %d\n",m,i); */
 			m -= 5;
 		}
-		else if (m % 2 == 0)
+		else if (m - 2 >= 0)
 		{
 			i++;
+			/* printf("m = %d - 2, i = %d\n",m,i); */
 			m -= 2;
 		}
-		else
+		else if (m - 1 >= 0)
 		{
 			i++;
+			/* printf("m = %d - 1, i = %d\n",m,i); */
 			m -= 1;
 		}
 	}
@@ -70,11 +74,12 @@ int main(int argc, char *argv[])
 		{
 			printf("%d\n", calc_coin(m));
 		}
-		return (0);
+
+			return (0);
 	}
 	else
 	{
-		printf("Error");
+		printf("Error\n");
 
 		return (1);
 	}
