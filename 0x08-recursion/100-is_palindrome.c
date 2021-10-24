@@ -28,7 +28,7 @@ void rec_strncpy(char *dest, char *src, int n)
 int is_palindrome(char *s)
 {
 	int l;
-	char st[100];
+	char st[1000];
 
 	l = strlen(s) - 1;
 
