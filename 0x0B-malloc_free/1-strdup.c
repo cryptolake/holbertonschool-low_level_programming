@@ -6,19 +6,23 @@ char *_strdup(char *str)
 	char *s;
 	unsigned int l, i;
 
-	l = strlen(str);
-	s = malloc(l);
 
-	if (str == NULL || s == NULL)
+	if (str == NULL)
 	{
 		return NULL;
 	}
 
-	for (i = 0; i < l; i++)
+	else
 	{
-		s[i] = str[i];
-	}
 
+		l = strlen(str);
+		s = malloc(l+1);
+		for (i = 0; i < l; i++)
+		{
+			s[i] = str[i];
+		}
+
+	}
 
 	return s;
 }
