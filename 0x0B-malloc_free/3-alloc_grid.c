@@ -1,6 +1,13 @@
 #include "main.h"
 #include <stdlib.h>
 
+/**
+ * free_when_f - free j mem of a
+ *
+ * @j: number elements to free
+ * @a: to free from
+ *
+ **/
 void free_when_f(int j, int **a)
 {
 	free(a);
@@ -43,7 +50,7 @@ int **alloc_grid(int width, int height)
 		a[j] = malloc(sizeof(int) * width);
 		if (a[j] == NULL)
 		{
-			free_when_f(j-1, a);
+			free_when_f(j - 1, a);
 			return (NULL);
 		}
 		j++;
