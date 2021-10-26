@@ -5,13 +5,14 @@
  * create_array - create array of chars of
  * specified size
  * @size: size
+ * @c: char
  *
  * Return: array addr
  **/
 char *create_array(unsigned int size, char c)
 {
 	char *s;
-	int i;
+	unsigned int i;
 
 	s = malloc(sizeof(c) * size);
 	i = 0;
