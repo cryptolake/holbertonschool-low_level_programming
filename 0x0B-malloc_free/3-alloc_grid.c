@@ -1,6 +1,16 @@
 #include "main.h"
 #include <stdlib.h>
 
+void free_when_f(int j, int **a)
+{
+	free(a);
+	while (j != -1)
+	{
+		free(a[j]);
+		j--;
+	}
+}
+
 /**
  * alloc_grid - allocate memory to grid
  * width of height and initialized with 0
@@ -20,7 +30,7 @@ int **alloc_grid(int width, int height)
 		return (NULL);
 	}
 
-	a = malloc(sizeof(int*) * height);
+	a = malloc(sizeof(int *) * height);
 
 	if (a == NULL)
 	{
@@ -31,6 +41,11 @@ int **alloc_grid(int width, int height)
 	while (j < height)
 	{
 		a[j] = malloc(sizeof(int) * width);
+		if (a[j] == NULL)
+		{
+			free_when_f(j-1, a);
+			return (NULL);
+		}
 		j++;
 	}
 
