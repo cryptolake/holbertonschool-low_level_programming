@@ -1,6 +1,12 @@
 #include "main.h"
 #include <string.h>
 
+/**
+ * _strdup - duplicate string in new memory addr
+ * @str: string
+ *
+ * Return: new string addr
+ **/
 char *_strdup(char *str)
 {
 	char *s;
@@ -9,14 +15,18 @@ char *_strdup(char *str)
 
 	if (str == NULL)
 	{
-		return NULL;
+		return (NULL);
 	}
 
 	else
 	{
 
 		l = strlen(str);
-		s = malloc(l+1);
+		s = malloc(l + 1);
+		if (s == NULL)
+		{
+			return (NULL);
+		}
 		for (i = 0; i < l; i++)
 		{
 			s[i] = str[i];
@@ -24,5 +34,5 @@ char *_strdup(char *str)
 
 	}
 
-	return s;
+	return (s);
 }
