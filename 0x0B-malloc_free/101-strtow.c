@@ -1,7 +1,15 @@
 #include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
+
+/**
+ * word_count - count words
+ * @str: string
+ *
+ * Return: number of words
+ **/
 int word_count(char *str)
 {
 	int i,
@@ -12,7 +20,7 @@ int word_count(char *str)
 
 	for (i = 0; i < l; i++)
 	{
-		if(str[i] != ' ')
+		if (str[i] != ' ')
 		{
 			x++;
 			while (str[i] != ' ')
@@ -23,6 +31,13 @@ int word_count(char *str)
 	return (x);
 }
 
+/**
+ * len_words - get length of each word
+ *
+ * @str: string
+ *
+ * Return: array of length of each word
+ **/
 int *len_words(char *str)
 {
 	int x,
@@ -42,7 +57,7 @@ int *len_words(char *str)
 		j = 0;
 		if (str[i] != ' ')
 		{
-			while(str[i] != ' ')
+			while (str[i] != ' ' && i < l)
 			{
 				i++;
 				j++;
@@ -52,13 +67,20 @@ int *len_words(char *str)
 		}
 	}
 
-        return y;
+	return (y);
 }
 
+/**
+ * strtow - split a string into words
+ *
+ * @str: string
+ *
+ * Return: array of strings of words
+ **/
 char **strtow(char *str)
 {
 	char **s;
-	int i = 0,w = 0,j,l,wc, *y;
+	int i = 0, w = 0, j, l, wc, *y;
 
 	if (str == NULL)
 		return (NULL);
@@ -72,7 +94,7 @@ char **strtow(char *str)
 	s = malloc(sizeof(char *) * (wc + 1));
 
 	for (i = 0; i < wc; i++)
-		s[i] = malloc(sizeof(char) * y[i]);
+		s[i] = malloc(sizeof(char) * (y[i] + 1));
 
 	w = 0;
 	for (i = 0; i < l; i++)
@@ -88,9 +110,9 @@ char **strtow(char *str)
 			w++;
 		}
 	}
-	w++;
-	s[w] = NULL;
+
 	free(y);
+	s[w] = NULL;
 
 	return (s);
 }
