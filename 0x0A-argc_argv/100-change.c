@@ -15,31 +15,31 @@ int calc_coin(int m)
 	i = 0;
 	while (m > 0)
 	{
-		if (m - 25 >= 0)
+		if (m >= 25)
 		{
 			i++;
 			/* printf("m = %d - 25, i = %d\n",m,i); */
-			m -= 25;
+			m = 25 * (m % 25);
 		}
-		else if (m - 10 >= 0)
+		else if (m >= 10)
 		{
 			i++;
 			/* printf("m = %d - 10, i = %d\n",m,i); */
 			m -= 10;
 		}
-		else if (m - 5 >= 0)
+		else if (m >= 5)
 		{
 			i++;
 			/* printf("m = %d - 5, i = %d\n",m,i); */
 			m -= 5;
 		}
-		else if (m - 2 >= 0)
+		else if (m >= 2)
 		{
 			i++;
 			/* printf("m = %d - 2, i = %d\n",m,i); */
 			m -= 2;
 		}
-		else if (m - 1 >= 0)
+		else if (m >= 1)
 		{
 			i++;
 			/* printf("m = %d - 1, i = %d\n",m,i); */
