@@ -72,7 +72,7 @@ char **strtow(char *str)
 	s = malloc(sizeof(char *) * (wc + 1));
 
 	for (i = 0; i < wc; i++)
-		s[i] = malloc(sizeof(char) * (y[i] + 1));
+		s[i] = malloc(sizeof(char) * y[i]);
 
 	w = 0;
 	for (i = 0; i < l; i++)
@@ -90,6 +90,7 @@ char **strtow(char *str)
 	}
 	w++;
 	s[w] = NULL;
+	free(y);
 
 	return (s);
 }
