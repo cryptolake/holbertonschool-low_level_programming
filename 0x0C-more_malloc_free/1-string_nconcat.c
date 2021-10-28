@@ -4,7 +4,7 @@
 /**
  * string_nconcat - concatenates two strings with
  * specified bytes
- * 
+ *
  * @s1: string
  * @s2: string
  * @n: bytes
