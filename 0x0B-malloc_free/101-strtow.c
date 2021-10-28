@@ -20,7 +20,6 @@ int word_count(char *str)
 		}
 	}
 
-	/* printf("wc: %d\n",x); */
 	return (x);
 }
 
@@ -59,28 +58,17 @@ int *len_words(char *str)
 char **strtow(char *str)
 {
 	char **s;
-
-	int i = 0,
-		w = 0,
-		j,
-		l,
-		wc;
-	int *y;
+	int i = 0,w = 0,j,l,wc, *y;
 
 	if (str == NULL)
-	{
 		return (NULL);
-	}
 
 	wc = word_count(str);
 	if (wc == 0)
-	{
 		return (NULL);
-	}
 
 	l = strlen(str);
 	y = len_words(str);
-
 	s = malloc(sizeof(char *) * (wc + 1));
 
 	for (i = 0; i < wc; i++)
@@ -96,14 +84,12 @@ char **strtow(char *str)
 				s[w][j] = str[i];
 				i++;
 			}
-			j++;
 			s[w][j] = '\0';
 			w++;
 		}
 	}
 	w++;
 	s[w] = NULL;
-
 
 	return (s);
 }
