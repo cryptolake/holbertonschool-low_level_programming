@@ -4,20 +4,24 @@
 
 int word_count(char *str)
 {
-	int i, x = 0, l;
+	int i,
+		x = 0,
+		l;
 
 	l = strlen(str);
 
 	for (i = 0; i < l; i++)
 	{
-		if (str[i] == ' ')
+		if(str[i] != ' ')
+		{
 			x++;
+			while (str[i] != ' ')
+				i++;
+		}
 	}
 
-	if (x == 0)
-		return (0);
-
-	return (x + 1);
+	/* printf("wc: %d\n",x); */
+	return (x);
 }
 
 int *len_words(char *str)
@@ -25,8 +29,9 @@ int *len_words(char *str)
 	int x,
 		i,
 		j = 0,
-		lw = 0,
+		wc = 0,
 		l;
+
 	int *y;
 
 	l = strlen(str);
@@ -35,22 +40,20 @@ int *len_words(char *str)
 
 	for (i = 0; i < l; i++)
 	{
-		j = i;
-		lw = 0;
-		while (str[j] != ' ')
+		j = 0;
+		if (str[i] != ' ')
 		{
-			++lw;
-			++j;
-		}
-
-		if (i != j)
-		{
-			++lw;
-			y[j - i] = lw;
+			while(str[i] != ' ')
+			{
+				i++;
+				j++;
+			}
+			y[wc] = j;
+			wc++;
 		}
 	}
 
-	return y;
+        return y;
 }
 
 char **strtow(char *str)
@@ -59,40 +62,47 @@ char **strtow(char *str)
 
 	int i = 0,
 		w = 0,
-		j = 0,
-		l = strlen(str),
+		j,
+		l,
 		wc;
 	int *y;
 
-	wc = word_count(str);
-	y = len_words(str);
-	s = malloc(sizeof(char *) * wc);
-
-	for (i = 0; i <= wc; i++)
-		s[i] = malloc(sizeof(char) * y[i]);
-
-	i = 0;
-	while (i < l)
+	if (str == NULL)
 	{
-		j = 0;
-		while (str[i] != ' ')
-		{
-			s[w][j] = str[i];
+		return (NULL);
+	}
 
-			j++;
-			i++;
-		}
-		i++;
-		if (j > 0)
-		{
-			s[w][j] = '\0';
-		}
+	wc = word_count(str);
+	if (wc == 0)
+	{
+		return (NULL);
+	}
 
+	l = strlen(str);
+	y = len_words(str);
+
+	s = malloc(sizeof(char *) * (wc + 1));
+
+	for (i = 0; i < wc; i++)
+		s[i] = malloc(sizeof(char) * (y[i] + 1));
+
+	w = 0;
+	for (i = 0; i < l; i++)
+	{
 		if (str[i] != ' ')
 		{
+			for (j = 0; j < y[w]; j++)
+			{
+				s[w][j] = str[i];
+				i++;
+			}
+			j++;
+			s[w][j] = '\0';
 			w++;
 		}
 	}
+	w++;
+	s[w] = NULL;
 
 
 	return (s);
