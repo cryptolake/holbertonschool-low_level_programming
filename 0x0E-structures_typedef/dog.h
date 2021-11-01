@@ -1,5 +1,6 @@
 #ifndef DOG_H_
 #define DOG_H_
+#include <stddef.h>
 
 /**
  * struct dog - a dog like any other
