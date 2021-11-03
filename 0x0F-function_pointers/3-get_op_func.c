@@ -6,9 +6,10 @@ int (*get_op_func(char *s))(int, int)
 				{"/", op_div}, {"%", op_mod}, {NULL, NULL}};
 	int i = 0;
 
-	if (s == NULL || (strlen(s) != 1 || (s[0] != '+' || s[0] != '-' ||
-		s[0] != '*' || s[0] != '/' ||
-		s[0] != '%')))
+	if (s == NULL || strlen(s) != 1 ||
+		!(s[0] == '+' || s[0] == '-' ||
+		s[0] == '*' || s[0] == '/' ||
+		s[0] == '%'))
 		return (NULL);
 
 	while (ops[i].op[0] != s[0] && ops[i].op != NULL)
