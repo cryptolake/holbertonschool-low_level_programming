@@ -15,7 +15,9 @@ int main(int argc, char *argv[])
 	num2 = atoi(argv[3]);
 	op = argv[2];
 
-	if (!test_op(op))
+	if (strlen(op) != 1 && (op[0] != '+' || op[0] != '-' ||
+		op[0] != '*' || op[0] != '/' ||
+		op[0] != '%'))
 	{
 		printf("ERROR\n");
 		exit(99);
