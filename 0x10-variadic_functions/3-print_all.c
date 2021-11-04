@@ -31,14 +31,8 @@ void pflt(va_list ap)
 void print_all(const char * const format, ...)
 {
 	va_list ap;
-	int i = 0,
-		j = 0;
-		parse types[] = {
-			{'c', pchr},
-			{'s', pstr},
-			{'i', pint},
-			{'f', pflt},
-				};
+	int i = 0, j;
+	parse types[] = {{'c', pchr},{'s', pstr},{'i', pint},{'f', pflt}};
 
 	va_start(ap, format);
 	while (format[i] != '\0')
