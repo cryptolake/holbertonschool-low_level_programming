@@ -26,17 +26,19 @@ int main(int argc, char *argv[])
 	}
 
 	n = atoi(argv[1]);
-	if (n < 0)
+	if (n <= 0)
 	{
 		printf("Error\n");
 		exit(2);
 	}
 	for (i = 0; i < n; i++)
 	{
-		printf("%x ", *(ptr + i));
+		printf("%02x", *(ptr + i));
+		if (i != n - 1)
+		putchar(' ');
 
 	}
-		printf("\n");
+		putchar('\n');
 
 	return (0);
 }
