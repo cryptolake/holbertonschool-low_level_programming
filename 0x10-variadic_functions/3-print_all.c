@@ -17,10 +17,12 @@ void pstr(va_list ap)
 	else
 		printf("%s", s);
 }
+
 void pint(va_list ap)
 {
 	printf("%d", va_arg(ap, int));
 }
+
 void pflt(va_list ap)
 {
 	printf("%f", va_arg(ap, double));
@@ -28,13 +30,6 @@ void pflt(va_list ap)
 
 void print_all(const char * const format, ...)
 {
-
-	typedef struct parse
-	{
-		char chr;
-		void (*f)(va_list ap);
-	} parse;
-
 	va_list ap;
 	int i = 0,
 		j = 0;
