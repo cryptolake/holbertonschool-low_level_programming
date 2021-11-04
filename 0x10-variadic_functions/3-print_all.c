@@ -4,25 +4,26 @@
 
 void pchr(va_list ap)
 {
-	printf("%c",va_arg(ap, int));
+	printf("%c", va_arg(ap, int));
 
 }
 void pstr(va_list ap)
 {
 	char *s;
+
 	s = va_arg(ap, char *);
 	if (s == NULL)
 		printf("(nil)");
 	else
-		printf("%s",s);
+		printf("%s", s);
 }
 void pint(va_list ap)
 {
-	printf("%d",va_arg(ap, int));
+	printf("%d", va_arg(ap, int));
 }
 void pflt(va_list ap)
 {
-	printf("%f",va_arg(ap, double));
+	printf("%f", va_arg(ap, double));
 }
 
 void print_all(const char * const format, ...)
@@ -30,13 +31,12 @@ void print_all(const char * const format, ...)
 	va_list ap;
 	int i = 0,
 		j = 0;
-		parse types[] =
-		{
+		parse types[] = {
 			{'c', pchr},
 			{'s', pstr},
 			{'i', pint},
 			{'f', pflt},
-	};
+				};
 
 	va_start(ap, format);
 	while (format[i] != '\0')
