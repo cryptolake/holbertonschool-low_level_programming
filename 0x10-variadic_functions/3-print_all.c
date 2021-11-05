@@ -23,6 +23,8 @@ void pstr(va_list ap)
 	char *s;
 
 	s = va_arg(ap, char *);
+	if (s == NULL)
+		s = "(nil)";
 
 	printf("%s", s);
 }
@@ -56,30 +58,23 @@ void print_all(const char * const format, ...)
 {
 	va_list ap;
 	int i = 0, j;
-	int x = 0;
+	char *sep = "";
 	parse types[] = {{'c', pchr}, {'s', pstr},
 					{'i', pint}, {'f', pflt}, {0, NULL}};
-	if (format == NULL)
-		return;
 
 	va_start(ap, format);
-	while (format[i] && format != NULL)
+	while (format && format[i])
 	{
 		j = 0;
-		switch (x)
-		{
-			case 1:
-				printf(", ");
-		}
 
-		x = 0;
 		while (types[j].chr && types[j].chr != format[i])
 			j++;
 
-		if (types[j].chr == format[i])
+		if (types[j].chr)
 		{
+			printf("%s", sep);
 			types[j].f(ap);
-			x = 1;
+			sep = ", ";
 		}
 
 		i++;
