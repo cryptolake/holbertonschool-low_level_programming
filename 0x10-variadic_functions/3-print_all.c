@@ -13,9 +13,12 @@ void pstr(va_list ap)
 
 	s = va_arg(ap, char *);
 	if (s == NULL)
+	{
 		printf("(nil)");
-	else
-		printf("%s", s);
+		return;
+	}
+
+	printf("%s", s);
 }
 
 void pint(va_list ap)
