@@ -8,6 +8,12 @@ void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
 
+/**
+ * struct parse - each type has it's function
+ * @chr: type
+ * @f: function
+ *
+ **/
 typedef struct parse
 {
 	char chr;
