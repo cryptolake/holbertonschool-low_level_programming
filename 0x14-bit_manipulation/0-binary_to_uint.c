@@ -27,7 +27,7 @@ unsigned int poww(unsigned int n1, unsigned int n2)
  **/
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int n = 0, l;
+	unsigned int n = 0;
 	int i, j = 0;
 
 	if (!b)
