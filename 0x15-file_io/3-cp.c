@@ -38,13 +38,15 @@ int main(int argc, char *argv[])
 		if (nwrite < 0)
 		{
 			close(fd_fr);
+			close(fd_to);
 			dprintf(STDERR_FILENO, "Error: Can't write to %s", argv[2]);
 			exit(99);
 		}
 	}
 
 
-
+	close(fd_fr);
+	close(fd_to);
 
 	return (0);
 }
