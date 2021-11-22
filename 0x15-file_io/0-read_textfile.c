@@ -21,11 +21,18 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	count = read(fd, buffer, letters);
 	if (count == -1)
+	{
+		free(buffer);
 		return (0);
+	}
 
 	wcount = write(STDOUT_FILENO, buffer, count);
 	if (wcount != count)
+	{
+		free(buffer);
 		return (0);
+
+	}
 
 	free(buffer);
 
