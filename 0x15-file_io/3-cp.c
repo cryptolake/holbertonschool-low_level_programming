@@ -4,30 +4,41 @@
 #include <unistd.h>
 #include <fcntl.h>
 
+void close_fail(int fd, int errc)
+{
+	if (errc == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
+}
+
 int main(int argc, char *argv[])
 {
 	int fd_fr, fd_to;
 	ssize_t nread, nwrite;
 	char buffer[1024];
 
+
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
 	fd_fr = open(argv[1], O_RDONLY);
 	if (fd_fr == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 
 	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC , S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	if (fd_to == -1)
 	{
-		close(fd_fr);
-		dprintf(STDERR_FILENO, "Error: Can't write to %s", argv[2]);
+
+		close_fail(fd_fr, close(fd_fr));
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 
 	}
@@ -37,16 +48,16 @@ int main(int argc, char *argv[])
 		nwrite = write(fd_to, buffer, nread);
 		if (nwrite < 0)
 		{
-			close(fd_fr);
-			close(fd_to);
-			dprintf(STDERR_FILENO, "Error: Can't write to %s", argv[2]);
+			close_fail(fd_fr, close(fd_fr));
+			close_fail(fd_to, close(fd_to));
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
 	}
 
 
-	close(fd_fr);
-	close(fd_to);
+	close_fail(fd_fr, close(fd_fr));
+	close_fail(fd_to, close(fd_to));
 
 	return (0);
 }
