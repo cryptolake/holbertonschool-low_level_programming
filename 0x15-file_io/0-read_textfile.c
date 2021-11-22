@@ -1,6 +1,14 @@
 #include "main.h"
 #include <unistd.h>
 
+/**
+ * read_textfile - read file and output content
+ * @filename: filename
+ * @letters: number of letters to output
+ *
+ * Return: success (number of letters) failure (0)
+ *
+ **/
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
@@ -11,7 +19,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (filename == NULL)
 		return (0);
 
-	fd = open(filename,O_RDONLY);
+	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		return (0);
 
