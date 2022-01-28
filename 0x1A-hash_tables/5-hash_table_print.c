@@ -1,9 +1,9 @@
 #include "hash_tables.h"
 
-/*
+/**
 * hash_table_print - print a hash table.
 * @ht: hash table
-*/
+**/
 void hash_table_print(const hash_table_t *ht)
 {
 	size_t i;
@@ -14,7 +14,7 @@ void hash_table_print(const hash_table_t *ht)
 	{
 		table = ht->array;
 		printf("{");
-		for ( i = 0; i < ht->size; i++) 
+		for (i = 0; i < ht->size; i++)
 		{
 			node = table[i];
 			if (node)
@@ -22,12 +22,12 @@ void hash_table_print(const hash_table_t *ht)
 				if (!first)
 					printf(", ");
 				first = 0;
-				printf("'%s':'%s'", node->key, node->value);
+				printf("'%s': '%s'", node->key, node->value);
 				while (node->next)
 				{
 					node = node->next;
 					printf(", ");
-					printf("'%s':'%s'", node->key, node->value);
+					printf("'%s': '%s'", node->key, node->value);
 				}
 			}
 		}
