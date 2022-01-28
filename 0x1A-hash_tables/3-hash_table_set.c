@@ -1,5 +1,12 @@
 #include "hash_tables.h"
 
+/**
+* hash_table_set - adds an element to the hash table
+* @ht: hash table
+* @key: key of element
+* @value: value associated with key
+* Return: 0 (failure), 1 (success)
+**/
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
@@ -13,7 +20,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	table = ht->array;
 	if (!table)
 		return (0);
-	
+
 	/* collision */
 	if (table[index])
 	{
@@ -36,6 +43,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	table[index]->value = strdup(value);
 	table[index]->key = strdup(key);
 	table[index]->next = NULL;
-	
+
 	return (1);
 }
