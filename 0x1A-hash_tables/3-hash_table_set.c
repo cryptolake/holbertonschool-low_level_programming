@@ -4,6 +4,7 @@
 * node_set - set node of hash table
 * @key: key
 * @value: value
+* Return: new node
 **/
 hash_node_t *node_set(const char *key, const char *value)
 {
