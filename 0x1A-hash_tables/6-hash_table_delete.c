@@ -1,7 +1,7 @@
 #include "hash_tables.h"
 
 /**
-* free_node - free hash table nodes of index
+* free_nodes - free hash table nodes of index
 * @node: node
 *
 **/
