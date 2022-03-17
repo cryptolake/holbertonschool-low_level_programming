@@ -6,5 +6,5 @@ OBJ = school.o main.o
 all: $(OBJ)
 	$(CC) $(SRC) -o $(NAME)
 
-$(OBJECTS): %.o: %.c
+$(OBJ): %.o: %.c
     $(CC) -o $(NAME)
