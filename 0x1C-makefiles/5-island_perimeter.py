@@ -3,22 +3,22 @@
 
 
 def check_grid(grid, i, j):
-    """Check neighbours."""
-    neigh = 0
+    """Check for neighbours or nothing."""
+    side = 0
 
-    if grid[i][j - 1] == 1:
-        neigh += 1
+    if j == 0 or grid[i][j - 1] == 1:
+        side += 1
 
-    if grid[i][j + 1] == 1:
-        neigh += 1
+    if len(grid[i]) == j + 1 or grid[i][j + 1] == 1:
+        side += 1
 
-    if grid[i - 1][j] == 1:
-        neigh += 1
+    if i == 0 or grid[i - 1][j] == 1:
+        side += 1
 
-    if grid[i + 1][j] == 1:
-        neigh += 1
+    if len(grid) == i + 1 or grid[i + 1][j] == 1:
+        side += 1
 
-    return neigh
+    return side
 
 
 def island_perimeter(grid):
