@@ -17,4 +17,4 @@ fclean:
 	-$(RM) *~ $(NAME) *.o
 
 re:
-	-$(CC)  %.c -o $(NAME) 
+	$(CC)  $(SRC) -o $(NAME) 
